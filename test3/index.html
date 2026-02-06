@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sternefänger — Kleines Touch-Spiel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrap">
+    <header>
+      <h1>Sternefänger</h1>
+      <div class="hud">
+        <span id="score">Punkte: 0</span>
+        <span id="lives">Leben: 3</span>
+      </div>
+    </header>
+
+    <main>
+      <canvas id="game"></canvas>
+
+      <div class="controls">
+        <button id="left" class="touch-btn" aria-label="Links">◀</button>
+        <button id="right" class="touch-btn" aria-label="Rechts">▶</button>
+      </div>
+
+      <div class="overlay" id="overlay">
+        <div class="menu">
+          <h2 id="title">Sternefänger</h2>
+          <p>Fange fallende Sterne. Nutze Touch oder die Pfeiltasten.</p>
+          <button id="start">Start</button>
+          <button id="restart" style="display:none">Neu starten</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <small>Tip: Auf iPad einfach die Buttons benutzen oder das Display berühren.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

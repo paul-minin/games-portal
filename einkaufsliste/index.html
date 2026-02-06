@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b84ff">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-192.svg">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Einkaufsliste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Einkaufslisten</h1>
+      <div class="new-list">
+        <input id="newListName" placeholder="Neue Liste..." />
+        <button id="addListBtn">+</button>
+      </div>
+      <ul id="lists"></ul>
+    </aside>
+    <main class="main">
+      <header>
+        <h2 id="currentListName">Keine Liste</h2>
+        <div class="list-actions">
+          <button id="renameListBtn">Umbenennen</button>
+          <button id="deleteListBtn">Löschen</button>
+          <button id="installBtn" style="display:none">Zum Startbildschirm</button>
+        </div>
+      </header>
+      <section class="add-item">
+        <input id="newItemInput" placeholder="Artikel hinzufügen..." />
+        <button id="addItemBtn">Hinzufügen</button>
+      </section>
+      <ul id="items" class="items"></ul>
+      <p class="hint">Tipp: Listen werden lokal im Browser gespeichert.</p>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

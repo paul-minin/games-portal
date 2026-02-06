@@ -1,0 +1,38 @@
+*{box-sizing:border-box;font-family:Segoe UI, Roboto, Arial, sans-serif}
+body{margin:0;background:#f4f5f7;color:#222}
+.app{display:flex;height:100vh}
+.sidebar{width:280px;background:#fff;border-right:1px solid #e0e0e0;padding:16px;display:flex;flex-direction:column}
+.sidebar h1{margin:0 0 12px 0;font-size:20px}
+.new-list{display:flex;gap:8px;margin-bottom:12px}
+.new-list input{flex:1;padding:8px;border:1px solid #ddd;border-radius:4px}
+.new-list button{padding:8px 12px;border:none;background:#0b84ff;color:#fff;border-radius:4px;cursor:pointer}
+#lists{list-style:none;padding:0;margin:0;overflow:auto}
+#lists li{padding:8px;border-radius:6px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+#lists li.active{background:#eef6ff}
+#lists li .count{font-size:12px;color:#666;margin-left:8px}
+
+.main{flex:1;padding:20px;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between}
+header h2{margin:0}
+.list-actions button{margin-left:8px;padding:6px 10px;border:1px solid #ddd;background:#fff;border-radius:4px;cursor:pointer}
+.add-item{display:flex;gap:8px;margin-top:16px}
+.add-item input{flex:1;padding:10px;border:1px solid #ddd;border-radius:4px}
+.add-item button{padding:10px 14px;border:none;background:#2ecc71;color:#fff;border-radius:4px;cursor:pointer}
+.items{list-style:none;padding:0;margin:16px 0 0 0;flex:1;overflow:auto}
+.items li{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid #f0f0f0}
+.items li .text{flex:1}
+.items li.done .text{ text-decoration:line-through;color:#999}
+.items li button{padding:6px 8px;border:none;background:#ff6b6b;color:#fff;border-radius:4px;cursor:pointer}
+.hint{color:#666;font-size:13px;margin-top:12px}
+
+@media (max-width:600px){
+  .app{flex-direction:column}
+  .sidebar{width:100%;display:flex;flex-direction:row;align-items:center;padding:8px;gap:8px}
+  .sidebar h1{margin:0;font-size:16px}
+  .new-list{flex:1;order:1}
+  #lists{display:flex;gap:8px;overflow:auto;order:2;padding-top:8px}
+  #lists li{min-width:120px}
+  .list-actions{display:flex;gap:8px}
+  .list-actions button{padding:6px 8px;font-size:13px}
+  #installBtn{background:#0b84ff;color:#fff;border:none;border-radius:4px;padding:6px 8px}
+}

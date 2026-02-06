@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 0c7c7813567f291e973f1e32c1fcb37bd8862cbd paul-minin <paul-minin@users.noreply.github.com> 1769966473 +0100	commit (initial): Add neon grid game
+0c7c7813567f291e973f1e32c1fcb37bd8862cbd cdf7a07b9484d6e167118655aef529346c97277a paul-minin <paul-minin@users.noreply.github.com> 1769966615 +0100	commit: Update Pages workflow to use upload-pages-artifact@v2
+cdf7a07b9484d6e167118655aef529346c97277a 431d535c3d5be64a51b3076b2cd4779259e7bae3 paul-minin <paul-minin@users.noreply.github.com> 1769966739 +0100	commit: Use peaceiris/actions-gh-pages to avoid deprecated artifact action
+431d535c3d5be64a51b3076b2cd4779259e7bae3 431d535c3d5be64a51b3076b2cd4779259e7bae3 paul-minin <paul-minin@users.noreply.github.com> 1769967028 +0100	checkout: moving from main to gh-pages
+431d535c3d5be64a51b3076b2cd4779259e7bae3 e4ab68c4227a1e8d935ef41a3c5ee4d1dd2b5366 paul-minin <paul-minin@users.noreply.github.com> 1769967226 +0100	commit: Use personal token from PAGES_PAT for pages deploy
+e4ab68c4227a1e8d935ef41a3c5ee4d1dd2b5366 44967e0b53fb717a70c2edb92021e1ed7474d12c paul-minin <paul-minin@users.noreply.github.com> 1769968031 +0100	commit: Add territory & turret mechanics, pixel graphics tweaks, UI button
+44967e0b53fb717a70c2edb92021e1ed7474d12c 1e7de5c62a691b75db8b2a06cbd6731bc19373a7 paul-minin <paul-minin@users.noreply.github.com> 1769968427 +0100	commit: Add buy/upgrade actions, connected tile buying, wave system and UI
+1e7de5c62a691b75db8b2a06cbd6731bc19373a7 3ec18888b41c6201c85da7efa86215512dbd4a33 paul-minin <paul-minin@users.noreply.github.com> 1769968716 +0100	commit: Add defensive resize, draw error overlay and try/catch in main loop for debugging
+3ec18888b41c6201c85da7efa86215512dbd4a33 3c14223b341d7ce0c5272dc9622e805575020a56 paul-minin <paul-minin@users.noreply.github.com> 1769969114 +0100	commit: Fix canvas DPI/resize handling, stronger grid, larger player/orb visuals

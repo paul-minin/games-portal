@@ -1,0 +1,9 @@
+html, body { height: 100%; margin: 0; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+#map { height: calc(100vh - 48px); }
+#controls { height: 48px; display: flex; align-items: center; gap: 12px; padding: 8px 12px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.12); z-index: 1000; }
+#toggleTracking { padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc; background: #f6f6f6; cursor: pointer; }
+#status { color: #333; font-size: 0.95rem; }
+@media (max-width: 600px) { #map { height: calc(100vh - 56px); } }
+
+/* Ensure the map takes full screen when opened directly */
+.leaflet-container { background: #ddd; }
