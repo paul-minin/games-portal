@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Meine Spiele — Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Meine Spiele 🎮</h1>
+    <p class="muted">Klicke ein Spiel an, um es einzubetten oder öffne es in einem neuen Tab.</p>
+  </header>
+
+  <section class="controls">
+    <input id="search" type="search" placeholder="Suche Spiele...">
+    <select id="sort">
+      <option value="name">Sortieren: Name</option>
+      <option value="name-desc">Name absteigend</option>
+    </select>
+    <label class="switch"><input id="openEmbedded" type="checkbox" checked><span>Einbetten</span></label>
+  </section>
+
+  <main class="layout">
+    <section id="gameList" class="grid" aria-live="polite"></section>
+
+    <aside id="viewer" class="viewer">
+      <div id="viewerHeader" class="viewer-header">
+        <strong id="viewerTitle">Wähle ein Spiel</strong>
+        <div class="viewer-actions">
+          <button id="openNewTab">In neuem Tab öffnen</button>
+          <button id="closeViewer">Schließen</button>
+        </div>
+      </div>
+      <div class="viewer-body">
+        <iframe id="gameFrame" src="" title="Spiel-Viewer"></iframe>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <small class="muted">Erstellt automatisch aus Ordnern mit einer <code>index.html</code>.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
