@@ -36,15 +36,24 @@ function renderList(){
         <a href="${g.path}" target="_blank" rel="noopener">Neuer Tab</a>
       </div>
     `;
+
+    // open on card click
+    card.addEventListener('click',()=> openGame(g.path));
+
     container.appendChild(card);
   });
 
-  // attach handlers
+  // attach handlers with stopPropagation so anchors/buttons don't trigger card click
   container.querySelectorAll('button[data-path]').forEach(btn=>{
-    btn.addEventListener('click',()=>{
+    btn.addEventListener('click',(e)=>{
+      e.stopPropagation();
       const path = btn.getAttribute('data-path');
       openGame(path);
     });
+  });
+
+  container.querySelectorAll('.card a').forEach(a=>{
+    a.addEventListener('click',(e)=>e.stopPropagation());
   });
 }
 
@@ -76,6 +85,15 @@ document.getElementById('sort').addEventListener('change',renderList);
 document.getElementById('closeViewer').addEventListener('click',()=>{
   document.getElementById('gameFrame').src = '';
   document.getElementById('viewerTitle').textContent = 'Wähle ein Spiel';
+  document.getElementById('viewer').classList.add('hidden');
+});
+
+// close viewer on Escape
+document.addEventListener('keydown',(e)=>{
+  if(e.key === 'Escape'){
+    const viewer = document.getElementById('viewer');
+    if(viewer && !viewer.classList.contains('hidden')) document.getElementById('closeViewer').click();
+  }
 });
 
 // init

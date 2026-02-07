@@ -22,9 +22,7 @@
   </section>
 
   <main class="layout">
-    <section id="gameList" class="grid" aria-live="polite"></section>
-
-    <aside id="viewer" class="viewer">
+    <aside id="viewer" class="viewer hidden">
       <div id="viewerHeader" class="viewer-header">
         <strong id="viewerTitle">Wähle ein Spiel</strong>
         <div class="viewer-actions">
@@ -33,9 +31,11 @@
         </div>
       </div>
       <div class="viewer-body">
-        <iframe id="gameFrame" src="" title="Spiel-Viewer"></iframe>
+        <iframe id="gameFrame" src="" title="Spiel-Viewer" tabindex="0"></iframe>
       </div>
     </aside>
+
+    <section id="gameList" class="grid" aria-live="polite"></section>
   </main>
 
   <footer>
