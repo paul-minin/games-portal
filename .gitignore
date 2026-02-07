@@ -1,0 +1,15 @@
+# Node
+node_modules/
+
+# Build
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+npm-debug.log*
