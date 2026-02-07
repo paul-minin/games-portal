@@ -4,5 +4,6 @@
   {"name":"einkaufsliste","path":"../einkaufsliste/index.html","thumb":"../einkaufsliste/icon-192.svg","description":""},
   {"name":"test3","path":"../test3/index.html","thumb":"../test3/thumbnail.png","description":""},
   {"name":"standort","path":"../standort/index.html","thumb":"../standort/thumbnail.png","description":""},
-  {"name":"test2","path":"../test2/index.html","thumb":"../test2/thumbnail.png","description":""}
+  {"name":"test2","path":"../test2/index.html","thumb":"../test2/thumbnail.png","description":""},
+  {"name":"mini-flugzeug-spiel","path":"../mini-flugzeug-spiel/index.html","thumb":"","description":"Mini Flugzeug Spiel"}
 ]
