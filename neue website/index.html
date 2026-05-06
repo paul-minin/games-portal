@@ -17,29 +17,53 @@
       </div>
     </header>
 
+    <section class="game-picker" aria-label="Spiele auswählen">
+      <div class="picker__intro">
+        <div>
+          <p class="picker__eyebrow">Spiele</p>
+          <h2 class="picker__title">Scroll durch die Spiele</h2>
+          <p class="picker__subtitle">Klicke auf ein Spiel, um direkt loszulegen.</p>
+        </div>
+      </div>
+
+      <div class="picker__list" id="gameList" aria-label="Spieleauswahl">
+        <button class="game-card" type="button" data-game="runner">
+          <span class="card__icon">🏃</span>
+          <strong>Runner</strong>
+          <p>Sprint, springe über Hindernisse und halte den Highscore.</p>
+        </button>
+        <button class="game-card" type="button" data-game="snake">
+          <span class="card__icon">🐍</span>
+          <strong>Snake</strong>
+          <p>Wachse, weiche dir selbst aus und besiege die Zeit.</p>
+        </button>
+        <button class="game-card" type="button" data-game="flappy">
+          <span class="card__icon">🐦</span>
+          <strong>Flappy</strong>
+          <p>Tippe, halte die Fliege im Flug und meistere die Rohre.</p>
+        </button>
+        <button class="game-card" type="button" data-game="breakout">
+          <span class="card__icon">🟦</span>
+          <strong>Breakout</strong>
+          <p>Zerstöre Blöcke mit Ball und Schläger.</p>
+        </button>
+      </div>
+    </section>
+
     <section class="stage" aria-label="Spielbereich">
       <canvas id="game" width="900" height="420" aria-label="Arcade Spiel"></canvas>
       <div id="overlay" class="overlay" role="status">
         <h1 class="overlay__title" id="overlayTitle">Arcade</h1>
-        <p class="overlay__text" id="overlayLine1">Wähle ein Spiel</p>
-        <p class="overlay__text" id="overlayLine2">Space/Klick zum Starten</p>
-
-        <div class="overlay__games" id="gameList" aria-label="Spiele-Auswahl">
-          <button class="overlay__game" type="button" data-game="runner">Runner</button>
-          <button class="overlay__game" type="button" data-game="snake">Snake</button>
-          <button class="overlay__game" type="button" data-game="flappy">Flappy</button>
-          <button class="overlay__game" type="button" data-game="breakout">Breakout</button>
-        </div>
-
+        <p class="overlay__text" id="overlayLine1">Wähle ein Spiel oben aus und klicke darauf.</p>
+        <p class="overlay__text" id="overlayLine2">Escape = Menü</p>
         <div class="overlay__actions">
           <button id="primaryBtn" class="overlay__btn" type="button">Start</button>
-          <button id="menuBtn" class="overlay__btn overlay__btn--secondary" type="button">Menü</button>
         </div>
       </div>
     </section>
 
     <footer class="help">
-      <span id="helpText">Wähle ein Spiel im Menü</span>
+      <span id="helpText">Scroll durch die Spiele und klicke auf eins zum Start.</span>
     </footer>
   </main>
 

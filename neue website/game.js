@@ -17,7 +17,6 @@
     overlayLine2: document.getElementById("overlayLine2"),
     gameList: document.getElementById("gameList"),
     primaryBtn: document.getElementById("primaryBtn"),
-    menuBtn: document.getElementById("menuBtn"),
   };
 
   const gameButtons = Array.from(
@@ -86,20 +85,15 @@
     return { x, y };
   }
 
-  function setOverlay({ title, line1, line2, showGameList, primaryText, showMenuBtn }) {
+  function setOverlay({ title, line1, line2, primaryText }) {
     if (!ui.overlay) return;
     ui.overlay.hidden = false;
-
-    const showList = Boolean(showGameList);
-    const showMenu = Boolean(showMenuBtn);
 
     if (ui.overlayTitle && title != null) ui.overlayTitle.textContent = title;
     if (ui.overlayLine1 && line1 != null) ui.overlayLine1.textContent = line1;
     if (ui.overlayLine2 && line2 != null) ui.overlayLine2.textContent = line2;
 
-    if (ui.gameList) ui.gameList.hidden = !showList;
     if (ui.primaryBtn && primaryText != null) ui.primaryBtn.textContent = primaryText;
-    if (ui.menuBtn) ui.menuBtn.hidden = !showMenu;
   }
 
   function setGameButtonPressed(gameId) {
@@ -929,25 +923,22 @@
     if (ui.score) ui.score.textContent = "0";
   }
 
-  function selectGame(gameId) {
+  function selectGame(gameId, start = true) {
     if (!games[gameId]) return;
     app.currentId = gameId;
     setGameButtonPressed(gameId);
     currentGame().reset();
     updateHud();
-    showMenu();
+    if (start) {
+      startPlay();
+    } else {
+      showMenu();
+    }
   }
 
   function showMenu() {
     app.mode = "menu";
-    setOverlay({
-      title: "Arcade",
-      line1: "Wähle ein Spiel",
-      line2: "Space/Klick/Touch: Start · Esc: Menü",
-      showGameList: true,
-      primaryText: "Start",
-      showMenuBtn: false,
-    });
+    if (ui.overlay) ui.overlay.hidden = true;
   }
 
   function startPlay() {
@@ -976,10 +967,8 @@
     setOverlay({
       title: g.getEndTitle?.() ?? "Game Over",
       line1: `Score: ${score} · Best: ${bestNew}`,
-      line2: "R oder Button = Neustart · Esc/Menu = Menü",
-      showGameList: false,
+      line2: "R oder Button = Neustart · Esc = Menü",
       primaryText: "Neustart",
-      showMenuBtn: true,
     });
   }
 
@@ -1017,9 +1006,8 @@
 
   // UI wiring
   ui.primaryBtn?.addEventListener("click", () => primaryAction());
-  ui.menuBtn?.addEventListener("click", () => showMenu());
   for (const btn of gameButtons) {
-    btn.addEventListener("click", () => selectGame(btn.dataset.game));
+    btn.addEventListener("click", () => selectGame(btn.dataset.game, true));
   }
 
   // Input
@@ -1052,7 +1040,6 @@
       e.preventDefault();
       const pos = getPointerPos(e);
       if (app.mode === "menu") {
-        startPlay();
         return;
       }
       if (app.mode === "gameover") {
@@ -1085,6 +1072,7 @@
   );
 
   // Boot
-  selectGame("runner");
+  selectGame("runner", false);
+  showMenu();
   requestAnimationFrame(tick);
 })();
