@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arcade – 4 Spiele</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hud" aria-live="polite">
+      <div class="hud__title" id="hudTitle">Arcade</div>
+      <div class="hud__score">
+        <span class="hud__label" id="scoreLabel">Score</span>: <span id="score">0</span>
+        <span class="hud__sep">·</span>
+        Best: <span id="best">0</span>
+      </div>
+    </header>
+
+    <section class="stage" aria-label="Spielbereich">
+      <canvas id="game" width="900" height="420" aria-label="Arcade Spiel"></canvas>
+      <div id="overlay" class="overlay" role="status">
+        <h1 class="overlay__title" id="overlayTitle">Arcade</h1>
+        <p class="overlay__text" id="overlayLine1">Wähle ein Spiel</p>
+        <p class="overlay__text" id="overlayLine2">Space/Klick zum Starten</p>
+
+        <div class="overlay__games" id="gameList" aria-label="Spiele-Auswahl">
+          <button class="overlay__game" type="button" data-game="runner">Runner</button>
+          <button class="overlay__game" type="button" data-game="snake">Snake</button>
+          <button class="overlay__game" type="button" data-game="flappy">Flappy</button>
+          <button class="overlay__game" type="button" data-game="breakout">Breakout</button>
+        </div>
+
+        <div class="overlay__actions">
+          <button id="primaryBtn" class="overlay__btn" type="button">Start</button>
+          <button id="menuBtn" class="overlay__btn overlay__btn--secondary" type="button">Menü</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="help">
+      <span id="helpText">Wähle ein Spiel im Menü</span>
+    </footer>
+  </main>
+
+  <script src="game.js" defer></script>
+</body>
+</html>
